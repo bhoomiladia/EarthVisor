@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const companyRoutes = require('./routes/companyRoutes');
 const authRoutes = require('./routes/authRoutes'); // Import the auth routes
+const ecometricsRoutes = require('./routes/ecoMetricRoutes');
 require('dotenv').config();
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -13,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use('/api/companies', companyRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/ecometrics', ecometricsRoutes);
 // Simple Route
 app.get('/', (req, res) => {
   res.send('Eco Tracker API is running');
