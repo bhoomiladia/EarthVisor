@@ -2,38 +2,29 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-
-// Create a User Schema
-const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true
-  }
+const UserSchema = new mongoose.Schema({
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    email: { type: String, required: true },
+    company: { type: mongoose.Schema.Types.ObjectId, ref: 'Company' },
+    createdAt: { type: Date, default: Date.now }
 });
-// Add a method to generate an authentication token
-userSchema.methods.generateAuthToken = function () {
-    // Generate a JWT token that includes the user's id and email
+
+// Method to generate an authentication token
+UserSchema.methods.generateAuthToken = function () {
     const token = jwt.sign(
-      { userId: this._id, email: this.email },
-      process.env.JWT_SECRET, // Secret key for JWT signing
-      { expiresIn: '1h' } // Expiry of the token (1 hour)
+        { userId: this._id, email: this.email },
+        process.env.JWT_SECRET,
+        { expiresIn: '1h' }
     );
     return token;
-  };
-// Adding a method to the user schema to validate password
-userSchema.methods.isPasswordValid = async function (password) {
-  return await bcrypt.compare(password, this.password);
+};
+
+// Method to validate password
+UserSchema.methods.isPasswordValid = async function (password) {
+    return await bcrypt.compare(password, this.password);
 };
 
 // Create and export the User model
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', UserSchema);
 module.exports = User;
