@@ -15,7 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       localStorage.setItem('token', data.token);
       alert('Login successful');
     } else {
-      alert(data.message);
+      alert('Invalid Credentials');
     }
   });
   

@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-</head>
-<body>
-  <h2>Login</h2>
-  <form id="loginForm">
-    <label for="username">Username:</label>
-    <input type="text" id="username" required>
-    <label for="password">Password:</label>
-    <input type="password" id="password" required>
-    <button type="submit">Login</button>
-  </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="C:\Users\bhoom\Desktop\MAIN\Eco-Tracker\eco-tracker-backend\login.html" class="active">Login</a></li>
+        <li><a href="C:\Users\bhoom\Desktop\MAIN\Eco-Tracker\eco-tracker-backend\register.html" class="active">Register</a></li>
+      </ul>
+    </nav>
 
-  <script src="login.js"></script>
-</body>
+    <!-- Login Container -->
+    <div class="login-container">
+      <h2>Login</h2>
+
+      <!-- Error message (optional) -->
+      <div class="error-message" style="display: none;">
+        Invalid credentials, please try again.
+      </div>
+
+      <form id="loginForm" action="/api/auth/login" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <script src="login.js"></script>
+  </body>
 </html>
