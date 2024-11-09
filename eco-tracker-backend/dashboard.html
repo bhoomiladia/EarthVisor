@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Eco-Tracker Dashboard</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#users">Users</a></li>
+      <li><a href="#companies">Companies</a></li>
+      <li><a href="#metrics">Metrics</a></li>
+      <li><a href="#reports">Reports</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <header>
+      <h1>Welcome to the Eco-Tracker Dashboard</h1>
+      <button class="logout-btn">Logout</button>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <h3>Total Users</h3>
+        <p>123</p>
+      </div>
+      <div class="card">
+        <h3>Total Companies</h3>
+        <p>45</p>
+      </div>
+      <div class="card">
+        <h3>Progress Updates</h3>
+        <p>678</p>
+      </div>
+    </section>
+
+    <section class="details">
+      <h2>Recent Activities</h2>
+      <div class="activity-list">
+        <p>User JohnDoe updated metrics for Company XYZ</p>
+        <p>Company ABC submitted a new report</p>
+        <p>User JaneSmith added a new progress update</p>
+      </div>
+    </section>
+ <!-- Charts Section -->
+    <section class="charts">
+      <h2 style="padding-top: 8px;">Analytics</h2>
+      <div class="chart-container">
+        <canvas id="userGrowthChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="progressUpdatesChart"></canvas>
+      </div>
+    </section>
+  </div>
+
+
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
