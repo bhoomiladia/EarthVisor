@@ -6,7 +6,7 @@ const auth = require('../middleware/authMiddleware'); // Authorization middlewar
 // POST route for data entry
 router.post('/data-entry', auth, async (req, res) => {
   const { dataType, value, timestamp } = req.body;
-  const { company } = req.user;
+  // const { company } = req.user;
 
   try {
     const entry = new DataEntry({
@@ -14,7 +14,7 @@ router.post('/data-entry', auth, async (req, res) => {
       value,
       timestamp,
       company,
-      user: req.user._id,
+      // user: req.user._id,
     });
     await entry.save();
     res.status(201).json({ message: 'Data entry saved successfully', entry });

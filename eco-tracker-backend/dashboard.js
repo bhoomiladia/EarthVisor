@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('dataEntryForm').addEventListener('submit', async (e) => {
+    const form = document.getElementById('dataEntryForm');
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
   
       const dataType = document.getElementById('dataType').value;
@@ -18,42 +19,43 @@ document.addEventListener('DOMContentLoaded', () => {
   
         if (response.ok) {
           alert('Data entry successful');
-          fetchData(); // Refresh data table after successful entry
+          form.reset(); // Clear form fields after successful submission
+          fetchData(); // Refresh displayed data
         } else {
-          console.error('Failed to submit data entry');
+          const errorData = await response.json();
+          console.error('Failed to submit data entry:', errorData.message);
         }
       } catch (error) {
         console.error('Error:', error);
       }
     });
   
-    // Fetch and display data initially on page load
-    fetchData();
-  });
+    async function fetchData() {
+      try {
+        const response = await fetch('http://localhost:5000/api/data', {
+          headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token'),
+          },
+        });
+        const data = await response.json();
   
-  async function fetchData() {
-    try {
-      const response = await fetch('http://localhost:5000/api/data', {
-        headers: {
-          'Authorization': 'Bearer ' + localStorage.getItem('token'),
-        },
-      });
-      const data = await response.json();
+        const tableBody = document.getElementById('dataTable').querySelector('tbody');
+        tableBody.innerHTML = '';
   
-      const tableBody = document.getElementById('dataTable').querySelector('tbody');
-      tableBody.innerHTML = ''; // Clear existing table data
-  
-      data.forEach((entry) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${entry.dataType}</td>
-          <td>${entry.value}</td>
-          <td>${new Date(entry.timestamp).toLocaleString()}</td>
-        `;
-        tableBody.appendChild(row);
-      });
-    } catch (error) {
-      console.error('Error fetching data:', error);
+        data.forEach((entry) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${entry.dataType}</td>
+            <td>${entry.value}</td>
+            <td>${new Date(entry.timestamp).toLocaleString()}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     }
-  }
+  
+    fetchData(); // Fetch data on page load
+  });
   

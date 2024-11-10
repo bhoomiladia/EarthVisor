@@ -6,7 +6,7 @@ const dataRoutes = require('./routes/dataEntryRoutes'); // Data routes file
 const app = express();
 const userRoutes = require('./routes/authRoutes');
 app.use('/api/users', userRoutes);
-app.use('/api',middleware, dataRoutes);
+app.use('/api/data-entry', dataRoutes);
 
 // Middleware
 app.use(cors());
