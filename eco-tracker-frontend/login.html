@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="backdrop-blur-sm flex flex-col carbon">
+    <nav>
+        <div class="duration-300 flex flex-row items-center justify-center  bg-gray-100 font-semibold bg-opacity-20 m-0">
+            <ul class="font-serif text-slate-200 font-normal flex flex-row items-center justify-center space-x-20 ">
+                <li class=" duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="home.html">Home</a></li>
+                <li class="duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="eco.html">Eco-Friendly Customization</a></li>
+                <li class="duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="carbon.html">Carbon Footprint Calculator</a></li>
+                <li class="duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="ecoroutes.html">Eco-Routes</a></li>
+            </ul>
+            <div class="items-end space-x-2">
+            <button class=" text-slate-300 px-3 py-3 ml-28 rounded-lg"><a href="login.html">Login</a></button>
+            <button class="bg-slate-400 px-3 py-2 m-0 rounded-lg"><a href="signup.html">Sign Up</a></button>
+
+        </div>
+        </div>
+    </nav>
+
+    <div class="flex flex-col items-center justify-center max-w mt-28" id="username8" >
+    <form class=" bg-transparent border p-10 border-gray-500 " id="loginForm">
+        <div class="place-items-center m-10 ">
+            <h1 class="text-5xl font-playfair-display  text-white font-semibold m-4 ">Login</h1>
+            <div class="flex flex-col max-w-full placeholder: text-gray-500">
+                <input type="text" class=" w-72 h-12 m-2 pl-3 pb-1.5 pt-1.5   block border-2 rounded-md border-slate-700" id="username" placeholder="Username">
+                <input type="password"  class="w-72 h-12 m-2 pl-3 pb-1.5 pt-1.5   block border-2 rounded-md border-slate-700" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class=" text-white border-2 p-2.5 w-32 m-5 rounded-3xl text-md">LOGIN</button>
+    </form>        
+            <!-- <button type="button" class="block p-2 hover:underline text-lg font-semibold text-white" onclick="switchPage('email')">Or Login With Email</button> -->
+            <p class="mt-6 text-center text-gray-300">New Here? <a href="signup.html" class="font-semibold text-white hover:underline">Sign Up</a></p>
+       
+        </div>
+        </div>
+        <!-- <div class="flex flex-col items-center justify-center max-w mt-28" id="email8" style="display: none;">
+            <form class=" bg-transparent border p-10 border-gray-500 " method="get">
+                <div class="place-items-center m-10 ">
+                    <h1 class="text-5xl font-playfair-display  text-white font-semibold m-4 ">Login</h1>
+                    <div class="flex flex-col max-w-full placeholder: text-gray-500">
+                        <input type="text" class=" w-72 h-12 m-2 pl-3 pb-1.5 pt-1.5   block border-2 rounded-md border-slate-700" id="email" placeholder="Email">
+                        <input type="password"  class="w-72 h-12 m-2 pl-3 pb-1.5 pt-1.5   block border-2 rounded-md border-slate-700" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class=" text-white border-2 p-2.5 w-32 m-5 rounded-3xl text-md">LOGIN</button>
+            </form>        
+                    <button type="button" class="block hover:underline p-2 text-lg font-semibold text-white" onclick="switchPage('username8')">Or Login With Username</button>
+        <p class="mt-6 text-center text-gray-300">New Here? <a href="signup.html" class="font-semibold text-white hover:underline">Sign Up</a></p>
+
+                </div>
+                </div> -->
+
+            <!-- <script>
+                function switchPage(pageId) {
+    // Hide all pages
+    document.getElementById('username8').style.display = 'none';
+    document.getElementById('email8').style.display = 'none';
+
+    // Show the selected page
+    document.getElementById(pageId).style.display = 'flex';
+}
+
+            </script> -->
+<script src="login.js"></script>
+    </body>  
+</html>

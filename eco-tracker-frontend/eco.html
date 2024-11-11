@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Service Customization</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="eco flex flex-col">
+<nav>
+    <div class="duration-300 flex flex-row items-center justify-center  bg-gray-100 font-semibold bg-opacity-20 m-0">
+        <ul class="font-serif text-slate-200 font-normal flex flex-row items-center justify-center space-x-20 ">
+            <li class=" duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="home.html">Home</a></li>
+            <li class="duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="eco.html">Eco-Friendly Customization</a></li>
+            <li class="duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="carbon.html">Carbon Footprint Calculator</a></li>
+            <li class="duration-300 border-y-2 border-opacity-0 p-3 border-gray-300 hover:border-opacity-50"><a href="ecoroutes.html">Eco-Routes</a></li>
+        </ul>
+        <div class="items-end space-x-2">
+        <button class=" text-slate-300 px-3 py-3 ml-28 rounded-lg"><a href="login.html">Login</a></button>
+        <button class="bg-slate-400 px-3 py-2 m-0 rounded-lg"><a href="signup.html">Sign Up</a></button>
+    </div>
+    </div>
+</nav>
+<div class="flex flex-col items-center">    <!-- Header -->
+    <h1 class="text-3xl font-serif text-white mt-8 mb-4 text-center">Eco-Friendly Service Customization Portal</h1>
+
+    <div class="bg-white bg-opacity-5 rounded-lg shadow-lg p-8 max-w-2xl w-full">
+
+        <!-- Green Service Selector Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-white mb-4">Green Service Selector</h2>
+            <p class="text-gray-400 mb-4">Choose sustainable options for your deliveries:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
+                <div class="flex items-center bg-gray-100 p-3 rounded-lg">
+                    <input type="checkbox" id="consolidated" name="deliveryOptions" value="consolidated" class="mr-3">
+                    <label for="consolidated" class="text-gray-700">Consolidated Shipments</label>
+                </div>
+                <div class="flex items-center bg-gray-100 p-3 rounded-lg">
+                    <input type="checkbox" id="eco-routes" name="deliveryOptions" value="eco-routes" class="mr-3">
+                    <label for="eco-routes" class="text-gray-700">Eco-Friendly Routes</label>
+                </div>
+                <div class="flex items-center bg-gray-100 p-3 rounded-lg">
+                    <input type="checkbox" id="slower-efficient" name="deliveryOptions" value="slower-efficient" class="mr-3">
+                    <label for="slower-efficient" class="text-gray-700">Slower, More Efficient Transport</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packaging Customization Portal -->
+        <section>
+            <h2 class="text-2xl font-semibold text-white mb-4">Packaging Customization Portal</h2>
+            <p class="text-gray-400 mb-4">Select eco-friendly packaging materials:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-1 gap-4 mb-6">
+                <div class="flex items-center bg-gray-100 p-3 rounded-lg">
+                    <input type="radio" id="recycled" name="packaging" value="recycled" class="mr-3">
+                    <label for="recycled" class="text-gray-700">Recycled Material</label>
+                </div>
+                <div class="flex items-center bg-gray-100 p-3 rounded-lg">
+                    <input type="radio" id="biodegradable" name="packaging" value="biodegradable" class="mr-3">
+                    <label for="biodegradable" class="text-gray-700">Biodegradable Material</label>
+                </div>
+                <div class="flex items-center bg-gray-100 p-3 rounded-lg">
+                    <input type="radio" id="compostable" name="packaging" value="compostable" class="mr-3">
+                    <label for="compostable" class="text-gray-700">Compostable Material</label>
+                </div>
+            </div>
+
+            <!-- Quantity Selection -->
+            <div class="mb-6">
+                <label for="quantity" class="block font-semibold text-gray-100 mb-2">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-700">Submit Customization</button>
+        </section>
+    </div>
+</div>
+
+    <!-- JavaScript for Form Submission -->
+    <script>
+        // Demo alert for form submission
+        document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert("Your eco-friendly customization options have been submitted!");
+        });
+    </script>
+
+</body>
+</html>

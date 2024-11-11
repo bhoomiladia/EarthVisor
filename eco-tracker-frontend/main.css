@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rochester&family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rochester&family=Rouge+Script&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.eco{
+    background-image: url(images/Add\ a\ heading.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center ;
+  }
+.home{
+    background-image: url(images/Add\ a\ heading.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center ;
+}
+.carbon{
+  background-image: url(images/Add\ a\ heading.png);
+  background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center ;
+    transition: ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+.delay-300 {
+    animation-delay: 0.3s; /* Adjust the delay as needed */
+  }
+ @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+  .fade-out {
+    animation: fadeOut 1s ease-in forwards; /* Image fade-out animation */
+  }
+  .typewriter {
+    display: inline-block;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    max-width: fit-content;
+    animation:
+      typing 10s steps(50, end),
+      blink-caret 1.75s ease-in infinite;
+  }
+  @keyframes typing {
+    from { width: 0%}
+    to { width: 100%}
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
+  .customwidth{
+    width: 421.756px;
+  }
